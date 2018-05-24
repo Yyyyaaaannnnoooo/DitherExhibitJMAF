@@ -32,8 +32,6 @@ class Dither {
     // this needs refactoring
     dither = createImage(floor(width / pixSize), floor(height / pixSize), RGB);
     big = createImage(floor(width / pixSize), floor(height / pixSize), RGB);
-    //bigGradient = createImage(floor(width / pixSize), floor(height / pixSize), RGB);
-    //gradient = createImage(floor(width / num), floor(height / num), RGB);
   }
   //initializing the dither in case of image
   void initDitherImage(PImage img) {
@@ -131,7 +129,6 @@ class Dither {
     PImage src = createImage(img.width, img.height, RGB);
     arrayCopy(img.pixels, src.pixels);
     src.loadPixels();
-    int start = 1, end = src.height - 1, step = 1;
     for (int x = 1; x < src.width - 1; x += 1) {
       for (int y = 1; y < src.height - 1; y += 1) {
         int index = x + y * src.width;

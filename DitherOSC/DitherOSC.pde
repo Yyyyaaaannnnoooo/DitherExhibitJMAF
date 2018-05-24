@@ -27,6 +27,8 @@ float c2 = 255;
 float[][] ditherKernel = {{0, 0, 0 }, {0, 0, 7.0}, {3.0, 5.0, 1.0}};//STEINBERG
 
 boolean isBW = false;
+int currVal = 0;
+int prevVal = 0;
 
 void setup() {
   //size(800, 600);
@@ -49,10 +51,12 @@ void oscEvent(OscMessage theOscMessage) {
     d.setRadiant(val == 1 ? true : false);
     println(val);
   } else if (addr.equals(PAGE + PIXEL)) { 
-    int value = floor(val);
-    //if(value < 4) value = 4;
-    d.setPixelSize(value);
-    println(value);
+    currVal = floor(val);
+    if (currVal != prevVal) {
+      prevVal = currVal;
+      d.setPixelSize(currVal);
+    }
+    println(currVal);
   } else if (addr.equals(PAGE + FACTOR)) { 
     d.setFactor(val);
     println(val);
@@ -104,7 +108,6 @@ void oscEvent(OscMessage theOscMessage) {
 }
 
 void draw() {
-  //background(255);
   PImage display = d.ditheredImageEnlarged();
   image(display, 0, 0);
 }
