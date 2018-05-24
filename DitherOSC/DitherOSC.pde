@@ -4,7 +4,6 @@ OscP5 oscP5;
 
 Dither d;
 
-
 final private String PAGE = "/DITHER";
 final private String BW = "/BW";
 final private String RADIAL = "/RADIAL";
@@ -30,14 +29,13 @@ float[][] ditherKernel = {{0, 0, 0 }, {0, 0, 7.0}, {3.0, 5.0, 1.0}};//STEINBERG
 boolean isBW = false;
 
 void setup() {
-  size(800, 600);
-  //fullScreen();
+  //size(800, 600);
+  fullScreen();
   /* start oscP5, listening for incoming messages at port 8000 */
   oscP5 = new OscP5(this, 8000);
   // initialize Dither
   d = new Dither();
   d.generateDither();
-  //pixelDensity(1);
 }
 void oscEvent(OscMessage theOscMessage) {
 
@@ -46,75 +44,61 @@ void oscEvent(OscMessage theOscMessage) {
   //println(addr);
   if (addr.equals(PAGE + BW)) { 
     d.setBW(val == 1 ? true : false, c1, c2);
-    //v_fader1 = val;
     println(val);
   } else if (addr.equals(PAGE + RADIAL)) { 
     d.setRadiant(val == 1 ? true : false);
-    //v_fader2 = val;
     println(val);
   } else if (addr.equals(PAGE + PIXEL)) { 
     int value = floor(val);
+    //if(value < 4) value = 4;
     d.setPixelSize(value);
-    //v_fader3 = val;
     println(value);
   } else if (addr.equals(PAGE + FACTOR)) { 
     d.setFactor(val);
-    //v_fader4 = val;
     println(val);
   } else if (addr.equals(PAGE + COL1)) { 
     c1 = val;
     d.setColor(c1, c2);
-    //v_fader5 = val;
     println(val);
   } else if (addr.equals(PAGE + COL2)) { 
     c2 = val;
     d.setColor(c1, c2);
-    //v_toggle1 = val;
     println(val);
   } else if (addr.equals(PAGE + pix1)) { 
     ditherKernel[0][0] = round(val);
-    //d.setKernel(ditherKernel);
-    //v_toggle2 = val;
+    d.setKernel(ditherKernel);
     println(val);
   } else if (addr.equals(PAGE + pix2)) { 
     ditherKernel[0][1] = round(val);
-    //d.setKernel(ditherKernel);
-    //v_toggle3 = val;
+    d.setKernel(ditherKernel);
     println(val);
   } else if (addr.equals(PAGE + pix3)) { 
     ditherKernel[0][2] = round(val);
-    //d.setKernel(ditherKernel);
-    //v_toggle4 = val;
+    d.setKernel(ditherKernel);
     println(val);
   } else if (addr.equals(PAGE + pix4)) { 
     ditherKernel[1][0] = round(val);
-    //d.setKernel(ditherKernel);
-    //v_toggle4 = val;
+    d.setKernel(ditherKernel);
     println(val);
   } else if (addr.equals(PAGE + pix5)) { 
     ditherKernel[1][1] = round(val);
-    //d.setKernel(ditherKernel);
-    //v_toggle4 = val;
+    d.setKernel(ditherKernel);
     println(val);
   } else if (addr.equals(PAGE + pix6)) { 
     ditherKernel[1][2] = round(val);
     d.setKernel(ditherKernel);
-    //v_toggle4 = val;
     println(val);
   } else if (addr.equals(PAGE + pix7)) { 
     ditherKernel[2][0] = round(val);
     d.setKernel(ditherKernel);
-    //v_toggle4 = val;
     println(val);
   } else if (addr.equals(PAGE + pix8)) { 
     ditherKernel[2][1] = round(val);
     d.setKernel(ditherKernel);
-    //v_toggle4 = val;
     println(val);
   } else if (addr.equals(PAGE + pix9)) { 
     ditherKernel[2][2] = round(val);
     d.setKernel(ditherKernel);
-    //v_toggle4 = val;
     println(val);
   }
 }

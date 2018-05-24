@@ -12,12 +12,13 @@ class Dither {
     new PVector(0, col, col), 
     new PVector(col, 0, col), 
     new PVector(0, 0, 0), 
-    new PVector(col, col, col), 
-    //new PVector(100, 180, 25),
+    new PVector(col, col, col)
   };
   private PImage dither, big, bigGradient, gradient = gradient();
   String kernelName = "";
   Dither() {
+    kernel = new float [3][3];
+    kernel = CHRIS;
     initDither();
     isDitherImage = false;
   }
@@ -31,10 +32,8 @@ class Dither {
     // this needs refactoring
     dither = createImage(floor(width / pixSize), floor(height / pixSize), RGB);
     big = createImage(floor(width / pixSize), floor(height / pixSize), RGB);
-    bigGradient = createImage(floor(width / pixSize), floor(height / pixSize), RGB);
+    //bigGradient = createImage(floor(width / pixSize), floor(height / pixSize), RGB);
     //gradient = createImage(floor(width / num), floor(height / num), RGB);
-    kernel = new float [3][3];
-    kernel = CHRIS;
   }
   //initializing the dither in case of image
   void initDitherImage(PImage img) {
@@ -91,7 +90,7 @@ class Dither {
       col1 = color(c1, 255, 255);
       col2 = color(c2, 255, 255);
       colorMode(RGB);
-    }else {
+    } else {
       col1 = color(c1);
       col2 = color(c2);
     }
@@ -113,7 +112,7 @@ class Dither {
   void setBW(boolean bool, float c1, float c2) {
     isBW = bool;
     setColor(c1, c2);
-    generateDither();    
+    generateDither();
   }
   void setFactor(float fac) {
     factor = fac; 
