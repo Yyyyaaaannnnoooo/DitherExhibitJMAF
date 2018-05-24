@@ -26,7 +26,7 @@
 
    ![Image](https://user-images.githubusercontent.com/17408277/40475850-da664f8e-5f42-11e8-9963-52efe940eb79.png)
 
-3. Open iTunes go to the iPad menu and choose __File Sharing__, click __Add…__ and add the ~~`iPadToDither_01.touchosc`~~  `iPadToDither_01.touchosc` file __Save…__, and __Sync__ the iPad
+3. Open iTunes go to the iPad menu and choose __File Sharing__, click __Add…__ and add the ~~`iPadToDither_01.touchosc`~~  `iPadToDither_03.touchosc` file __Save…__, and __Sync__ the iPad
 
    ![Image](https://user-images.githubusercontent.com/17408277/40475854-dabc330e-5f42-11e8-946e-2900617ddd4e.png)
 
