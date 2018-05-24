@@ -72,47 +72,47 @@ void oscEvent(OscMessage theOscMessage) {
     //v_toggle1 = val;
     println(val);
   } else if (addr.equals(PAGE + pix1)) { 
-    ditherKernel[0][0] = val;
+    ditherKernel[0][0] = round(val);
     //d.setKernel(ditherKernel);
     //v_toggle2 = val;
     println(val);
   } else if (addr.equals(PAGE + pix2)) { 
-    ditherKernel[0][1] = val;
+    ditherKernel[0][1] = round(val);
     //d.setKernel(ditherKernel);
     //v_toggle3 = val;
     println(val);
   } else if (addr.equals(PAGE + pix3)) { 
-    ditherKernel[0][2] = val;
+    ditherKernel[0][2] = round(val);
     //d.setKernel(ditherKernel);
     //v_toggle4 = val;
     println(val);
   } else if (addr.equals(PAGE + pix4)) { 
-    ditherKernel[1][0] = val;
+    ditherKernel[1][0] = round(val);
     //d.setKernel(ditherKernel);
     //v_toggle4 = val;
     println(val);
   } else if (addr.equals(PAGE + pix5)) { 
-    ditherKernel[1][1] = val;
+    ditherKernel[1][1] = round(val);
     //d.setKernel(ditherKernel);
     //v_toggle4 = val;
     println(val);
   } else if (addr.equals(PAGE + pix6)) { 
-    ditherKernel[1][2] = val;
+    ditherKernel[1][2] = round(val);
     d.setKernel(ditherKernel);
     //v_toggle4 = val;
     println(val);
   } else if (addr.equals(PAGE + pix7)) { 
-    ditherKernel[2][0] = val;
+    ditherKernel[2][0] = round(val);
     d.setKernel(ditherKernel);
     //v_toggle4 = val;
     println(val);
   } else if (addr.equals(PAGE + pix8)) { 
-    ditherKernel[2][1] = val;
+    ditherKernel[2][1] = round(val);
     d.setKernel(ditherKernel);
     //v_toggle4 = val;
     println(val);
   } else if (addr.equals(PAGE + pix9)) { 
-    ditherKernel[2][2] = val;
+    ditherKernel[2][2] = round(val);
     d.setKernel(ditherKernel);
     //v_toggle4 = val;
     println(val);
