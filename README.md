@@ -66,7 +66,7 @@
 
     ![img](https://user-images.githubusercontent.com/17408277/40477381-954b648a-5f46-11e8-9ec5-cd29d916dfca.png)
 
-13. Go back to the main menu and click __LAYOUT__ and choose `iPadToDither_01` layout
+13. Go back to the main menu and click __LAYOUT__ and choose ~~`iPadToDither_01`~~ `iPadToDither_03` layout
 
     ![img](https://user-images.githubusercontent.com/17408277/40477384-95a25c54-5f46-11e8-8327-cba925a6cef1.png)
 
